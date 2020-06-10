@@ -1,0 +1,105 @@
+div {
+  border: 0.5px solid green;
+}
+.grid-container {
+  height: 300px;
+  grid-template: repeat(6, 1fr) / repeat(12, 1fr); /* rows then columns*/
+}
+
+.grid-container .header {
+  grid-column: 1 / -1;
+  grid-row: 1 / 1;
+}
+
+.grid-container .navbar {
+  grid-column: 1 / 2;
+  grid-row: 2 / -1;
+}
+
+.grid-container .content {
+  grid-column: 2 / -1;
+  grid-row: 2 / -2;
+}
+
+.grid-container .footer {
+  grid-column: 2 / -1;
+  grid-row: -2 / -1;
+}
+
+.grid-container .meta {
+  grid-column: -3 / -1;
+  grid-row: 2 / 4;
+}
+
+.grid-named {
+  height: 300px;
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: 1fr 1fr [content-start navbar-end] repeat(10, 1fr);
+}
+
+.grid-named .header {
+  grid-column: 1 / -1;
+  grid-row: 1 / 1;
+}
+
+.grid-named .navbar {
+  grid-column: 1 / navbar-end;
+  grid-row: 2 / -1;
+}
+.grid-named .content {
+  grid-column: content-start / -1;
+  grid-row: 2 / -2;
+}
+.grid-named .footer {
+  grid-column: content-start / -1;
+  grid-row: -2 / -1;
+}
+
+.grid-named .meta {
+  grid-column: -3 / -1;
+  grid-row: 2 / 4;
+}
+
+.grid-areas {
+  height: 300px;
+  display: grid;
+  grid-template-areas:
+    "h h h h h h h h h h h h"
+    "n n c c c c c c c c c c"
+    "n n c c c c c c c c c c"
+    "n n c c c c c c c c c c"
+    "n n c c c c c c c c c c"
+    "n n f f f f f f f f f f";
+}
+.grid-areas .navbar {
+  grid-area: n;
+}
+.grid-areas .content {
+  grid-area: c;
+}
+.grid-areas .footer {
+  grid-area: f;
+}
+.grid-areas .header {
+  grid-area: h;
+}
+.grid-areas .meta {
+  grid-column: -3 / -1;
+  grid-row: 2 / 4;
+}
+
+.grid-implicit {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(100px, 1fr));
+  grid-template-rows: 80px;
+  grid-auto-rows: 100px;
+  grid-auto-flow: dense;
+}
+
+.grid-implicit .grid-item:nth-child(2) {
+  grid-row: span 2;
+}
+.grid-implicit .grid-item:nth-child(3) {
+  grid-row: span 3;
+}

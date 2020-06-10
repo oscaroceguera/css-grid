@@ -1,25 +1,39 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
+import Basic from './basic'
+import AdvancedTemplating from "./Advanced-templating";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/basics">Basics</Link>
+            </li>
+            <li>
+              <Link to="/advancedTemplating">Advanced Templating</Link>
+            </li>
+          </ul>
+        </nav>
+        <div
+          style={{
+            border: "1px solid red",
+          }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <Switch>
+            <Route exac path="/basics">
+              <Basic />
+            </Route>
+            <Route exac path="/advancedTemplating">
+              <AdvancedTemplating />
+            </Route>
+          </Switch>
+        </div>
+      </div>
+    </Router>
   );
 }
 
