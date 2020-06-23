@@ -1,0 +1,10 @@
+.filter-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-auto-rows: 6ch; /* height of each row (definition in the first post) */
+  grid-gap: 2ch;
+}
+
+.filter-wrapper .action-btns {
+  grid-column-end: -1;
+}

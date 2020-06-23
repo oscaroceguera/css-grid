@@ -1,0 +1,82 @@
+.fancy-homepage {
+  display: grid;
+  grid-template-columns: repeat(24, 1fr);
+  grid-template-rows: repeat(14, 1fr);
+}
+
+.toolbar {
+  grid-row: 1 / span 1;
+  grid-column: 1 / -1;
+}
+
+.panel {
+  grid-row: 3 / -1; /* to leave an empty row between the toolbar and the panel */
+  grid-column: 10 / -1; /* the width-middle of the screen is 12 */
+}
+
+.caroussel {
+  grid-row: 9 / -1; /* the height-middle of the screen is 7 */
+  grid-column: 1 / -1;
+}
+
+.title {
+  grid-row: 3 / 8;
+  grid-column: 2 / 9;
+}
+
+/* ! some more styling */
+.fancy-homepage {
+  height: 100%;
+  width: 100%;
+}
+.toolbar {
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 3px solid white;
+}
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  letter-spacing: 0.5px;
+}
+.panel {
+  padding: 2ch 2rem 0 1rem;
+  position: relative;
+}
+.panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 1rem;
+  border-radius: 0.5rem 0.5rem 0 0;
+  background: rgba(255, 255, 255, 0.25);
+}
+.caroussel {
+  position: relative;
+  z-index: 1;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.caroussel-item {
+  border: 3px solid white;
+  margin: 0 0.5rem;
+  height: 100%;
+  width: 24%;
+  font-size: 1.5rem;
+  background: var(--text-color);
+  color: var(--bg-color);
+  border-radius: 0.5rem;
+  border: none;
+  box-shadow: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

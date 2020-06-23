@@ -1,0 +1,39 @@
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(95px, 1fr));
+  grid-gap: 1rem;
+  grid-auto-flow: dense;
+}
+
+.horizontal {
+  grid-column: span 2;
+}
+
+.vertical {
+  grid-row: span 2;
+}
+
+/* ! gallery styling */
+.gallery {
+  border: 5px solid red;
+  width: 650px;
+  height: 400px;
+  padding: 1rem;
+}
+.gallery-item {
+  border: 3px solid white;
+  padding: 1ch 1rem;
+  position: relative;
+  overflow: hidden;
+}
+.gallery-item img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.gallery-item span {
+  color: white;
+  position: relative;
+  z-index: 1;
+}
